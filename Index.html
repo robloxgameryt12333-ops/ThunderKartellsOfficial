@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THUNDER KARTELLS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Hamburg_Emergency.jpg') no-repeat center center/cover;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    #preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .circle {
+      width: 90px;
+      height: 90px;
+      border: 6px solid rgba(0, 255, 255, 0.3);
+      border-top: 6px solid #0ff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: spin 1s linear infinite;
+      box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+      position: relative;
+    }
+
+    .circle span {
+      position: absolute;
+      font-size: 28px;
+      font-weight: bold;
+      color: #0ff;
+      text-shadow: 0 0 12px #0ff, 0 0 25px #0ff;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Main Content */
+    #main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      padding: 20px;
+      backdrop-filter: brightness(0.7); /* background thoda dark ho jaye text visible rahe */
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    body.loaded #main {
+      opacity: 1;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 2em;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    p {
+      font-size: 1em;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #0ff, #00aaff);
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95em;
+      box-shadow: 0 0 12px #0ff;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #00f7ff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8em;
+      color: #ccc;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #000;
+    }
+
+    /* Mobile Fix */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      .btn {
+        font-size: 0.85em;
+        padding: 8px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="circle">
+      <span>TK</span>
+    </div>
+  </div>
+
+  <!-- Main Website -->
+  <div id="main">
+    <h1>⚡ THUNDER KARTELLS ⚡</h1>
+    <p>Power • Unity • Strength</p>
+    
+    <div class="buttons">
+      <a href="#" class="btn">👑 Members</a>
+      <a href="https://discord.gg/FTMyjKs8" target="_blank" class="btn">🎮 Discord</a>
+      <a href="#" class="btn">▶️ YouTube</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Thunder Kartells | All Rights Reserved
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("preloader").classList.add("hide");
+        document.body.classList.add("loaded");
+      }, 5000); // 5 seconds
+    });
+  </script>
+</body>
+  </html>
